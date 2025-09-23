@@ -1,0 +1,423 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #000;          /* Fondo negro */
+  color: #fff;               /* Texto blanco */
+  line-height: 1.6;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #000;
+  padding: 10px 20px;
+}
+
+.navbar .logo {
+  color: #e60000;
+  font-weight: bold;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.navbar input {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #e60000;
+}
+
+/* ================= BENEFICIOS ================= */
+.benefits {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.benefit {
+  flex: 1;
+  max-width: 320px;
+  padding: 120px 100px;
+  color: white;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 15px rgba(230, 0, 0, 0.3);
+}
+
+.benefit strong {
+  color: #e60000;
+}
+
+/* Ajustar fondos específicos */
+.benefit1 { background-image: url(img/gimnasio2.avif); }
+.benefit2 { background-image: url(img/gimnasio3.avif); }
+.benefit3 { background-image: url(img/asesoria.jpg); }
+
+/* ================= OFERTAS ================= */
+main {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+main h2 {
+  color: #e60000;
+  margin-bottom: 20px;
+}
+
+.offers {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.offer {
+  width: 180px;
+  text-align: center;
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.offer:hover {
+  transform: scale(1.08);
+}
+
+.offer img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  color: #ccc;
+  margin-top: 40px;
+  border-top: 1px solid #e60000;
+}
+
+footer .socials a {
+  margin: 0 10px;
+  font-size: 22px;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+footer .socials a:hover {
+  color: #e60000;
+}
+
+/* ================= SOMOS KINGFIT ================= */
+.somos {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  gap: 40px;
+  flex-wrap: wrap;
+  background: #111;
+  color: #fff;
+}
+
+.somos-info {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.somos-info h1,
+.somos-info h2 {
+  color: #e60000;
+  margin-bottom: 15px;
+  padding: 60px 0px 0px 0px;
+}
+
+.somos-info h3 {
+  margin: 15px 0 10px;
+  font-weight: normal;
+  color: #bbb;
+}
+
+.somos-mapa {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.somos-mapa img {
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid #e60000;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.somos-mapa .datos {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Formulario de contacto */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #e60000;
+  border-radius: 6px;
+  background: #222;
+  color: #fff;
+}
+
+.contact-form button {
+  background: #e60000;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #ff1a1a;
+}
+
+/* ================= BANNERS ================= */
+.banner,
+.banner2 {
+  text-align: center;
+  padding: 250px 20px;
+  color: red;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner { background: url(img/gentegim.jpeg) center/cover no-repeat; }
+.banner2 { background: url(img/suplementacion.jpg) center/cover no-repeat; }
+
+/* ================= GRID DE CATEGORÍAS ================= */
+.categorias {
+  padding: 40px;
+  text-align: center;
+}
+
+.grid-categorias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* se adapta al ancho */
+  gap: 20px;
+  padding: 40px;
+  text-align: center;
+}
+
+.categoria {
+  border: 1px solid #e60000;
+  padding: 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+  background: #111;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centra contenido horizontal */
+  justify-content: center; /* centra contenido vertical */
+}
+
+.categoria img {
+  width: 150px;       /* mismo ancho para todas */
+  height: 150px;      /* mismo alto para todas */
+  object-fit: cover;  /* recorta si es necesario */
+  border-radius: 6px;
+  margin-bottom: 12px; /* espacio con el texto */
+}
+
+.categoria:hover {
+  background: #222;
+  transform: scale(1.05);
+}
+
+.categoria p {
+  margin: 0;
+  font-weight: bold;
+  color: #e60000;
+  text-align: center;
+}
+/* ================= FORMULARIO LOGIN ================= */
+.form-box {
+  background-color: #000;
+  color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 350px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+.form-box input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e60000;
+  border-radius: 5px;
+  background-color: #111;
+  color: #fff;
+}
+
+.form-box input::placeholder {
+  color: #aaa;
+}
+
+.form-box button {
+  background-color: #e60000;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.form-box button:hover {
+  background-color: #b30000;
+}
+/* Contenedor principal: filtros a la izquierda, productos a la derecha */
+.catalogo {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ================= FILTROS ================= */
+.filtros {
+  flex: 0 0 200px; /* Ancho fijo para la columna de filtros */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filtros input {
+  display: none;
+}
+
+.filtros label {
+  cursor: pointer;
+  font-weight: bold;
+  color: #e60000;
+  padding: 8px 12px;
+  border: 1px solid #e60000;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.filtros label:hover {
+  background: #e60000;
+  color: #fff;
+}
+
+/* ================= PRODUCTOS ================= */
+.productos {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Productos individuales */
+.producto {
+  border: 1px solid #e60000;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  background: #111;
+  color: #fff;
+  display: none; /* Ocultar todos por defecto */
+}
+
+.producto img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Mostrar según categoría seleccionada */
+#todos:checked ~ .productos .producto { display: block; }
+#fitness:checked ~ .productos .fitness { display: block; }
+#futbol:checked ~ .productos .futbol { display: block; }
+#padel:checked ~ .productos .padel { display: block; }
+#boxeo:checked ~ .productos .boxeo { display: block; }
+
+/* ================= CATEGORÍAS ================= */
+.categorias {
+  padding: 40px;
+  text-align: center;
+}
+
+.categoria {
+  border: 1px solid #e60000;
+  padding: 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+  background: #111;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categoria img {
+  width: 100%;
+  max-width: 200px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.categoria:hover {
+  background: #222;
+  transform: scale(1.05);
+}
+
+.categoria p {
+  margin-top: 12px;
+  font-weight: bold;
+  color: #e60000;
+}
