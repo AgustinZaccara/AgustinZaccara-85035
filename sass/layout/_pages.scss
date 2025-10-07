@@ -1,0 +1,194 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.categorias {
+  padding: 40px;
+  text-align: center;
+}
+
+.grid-categorias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  padding: 20px;
+
+  .categoria {
+    @include card;
+    padding: 25px;
+    text-align: center;
+    color: $color-text;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover { transform: translateY(-5px); border-color: $color-accent; }
+
+    img { width: 100%; height: 160px; object-fit: cover; margin-bottom: 15px; }
+    p { font-weight: bold; color: $color-accent; }
+  }
+}
+
+.catalogo {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+
+  .filtros {
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    input { display: none; }
+
+    label {
+      cursor: pointer;
+      padding: 10px 15px;
+      border: 1px solid $color-accent;
+      border-radius: 6px;
+      color: $color-accent;
+      font-weight: 600;
+      text-align: center;
+      transition: 0.3s;
+      &:hover { background: rgba($color-accent, 0.1); }
+    }
+  }
+
+  .productos {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+
+    .producto {
+      @include card;
+      padding: 15px;
+      text-align: center;
+      display: none;
+
+      img { width: 100%; height: 150px; object-fit: cover; margin-bottom: 10px; }
+    }
+  }
+}
+.somos {
+  
+    display: flex;
+    flex-direction: column;
+    gap: 40px; // Espacio entre secciones
+    padding-top: 40px;
+    padding-bottom: 80px;
+
+   
+    @include respond(md) {
+        display: grid;
+        grid-template-columns: 2fr 1fr; 
+        gap: 60px;
+    }
+
+    .somos-mapa {
+        
+        img {
+            @include card;
+            width: 100%;
+            height: 280px; 
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .datos {
+            line-height: 1.7;
+        }
+    }
+
+    .contact-form {
+        // Estilo para el formulario de contacto (opcional)
+        input, textarea {
+            // Hereda el estilo de otros formularios
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid $color-accent; 
+            background: $color-panel; 
+            color: $color-text;
+            border-radius: 6px;
+        }
+    }
+}
+.catalogo {
+    // Diseño Mobile First: Filtros y Productos se apilan verticalmente
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 15px;
+
+    .productos {
+        // Grid responsivo para los productos
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+    }
+
+    // Diseño Desktop: Barra lateral de Filtros a la izquierda
+    @include respond(md) {
+        flex-direction: row;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        gap: 40px;
+
+        .filtros {
+            flex: 0 0 220px; // Fija el ancho de la barra lateral
+            // El resto de los estilos de .filtros (label/input) ya están bien en main.css
+        }
+        
+        .productos {
+            flex: 1; // Ocupa el espacio restante
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+    }
+    .producto {
+        @include card; // Mejora la visual con tu mixin de tarjeta
+        padding: 15px;
+        text-align: center;
+        
+        p {
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        small {
+            display: block;
+            color: #a1a1aa; // $color-muted
+        }
+    }
+}
+    // Tu grid ya está bien definido en CSS, solo mejoramos la estética de los elementos
+    .categoria {
+        @include card; // Aplica tu mixin de tarjeta a cada categoría
+        padding: 20px;
+        text-align: center;
+        img {
+            // Asegura que las imágenes de marca se vean bien
+            object-fit: contain;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+    }
+.offers {
+    // Similar a las categorías, añade el estilo de tarjeta a las ofertas
+    .offer {
+        @include card; // Aplica el estilo de tarjeta
+        padding: 15px;
+        text-align: center;
+        
+        p {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    }
+}
+
+// Mostrar productos según radio seleccionado
+#todos:checked ~ .productos .producto { display: block; }
+#fitness:checked ~ .productos .fitness { display: block; }
+#futbol:checked ~ .productos .futbol { display: block; }
+#padel:checked ~ .productos .padel { display: block; }
+#boxeo:checked ~ .productos .boxeo { display: block; }
